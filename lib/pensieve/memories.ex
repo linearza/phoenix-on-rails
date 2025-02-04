@@ -16,4 +16,9 @@ defmodule Pensieve.Memories do
     |> Memory.changeset(attrs)
     |> Repo.update()
   end
+
+
+  def change_memory(%Memory{} = memory, attrs \\ %{}) do
+    Memory.changeset(memory, attrs)
+  end
 end
