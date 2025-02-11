@@ -101,4 +101,17 @@ defmodule Pensieve.Hogwarts do
   def change_wizard(%Wizard{} = wizard, attrs \\ %{}) do
     Wizard.changeset(wizard, attrs)
   end
+
+  # NOTE: Custom solution below to search across both first and last name
+  def search_wizards_by_name(name) do
+    query = "%#{name}%"
+    clean_query = String.replace(query, ~r/\s+/, "")
+
+    Repo.all(
+      from(
+        w in Wizard,
+        where: fragment("concat(?, ?) ILIKE ?", w.first_name, w.last_name, ^"%#{clean_query}%")
+      )
+    )
+  end
 end
