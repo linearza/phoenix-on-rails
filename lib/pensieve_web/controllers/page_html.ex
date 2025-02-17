@@ -8,22 +8,22 @@ defmodule PensieveWeb.PageHTML do
 
   embed_templates "page_html/*"
 
-  # Example function component - not used as the heex file takes preference atm
-  def about(assigns) do
-    ~H"""
-   <h1 class="text-3xl mb-6">About</h1>
+  # # Example function component - not used as the heex file takes preference atm
+  # def about(assigns) do
+  #   ~H"""
+  #  <h1 class="text-3xl mb-6">About</h1>
 
-   <p>This is the Pensieve app, built using Elixir and Phoenix. 123</p>
+  #  <p>This is the Pensieve app, built using Elixir and Phoenix. 123</p>
 
-   <p>
-     &copy; <%= Date.utc_today.year %>
+  #  <p>
+  #    &copy; <%= Date.utc_today.year %>
 
-     <%= if Date.leap_year?(Date.utc_today) do %>
-       (a leap year)
-     <% else %>
-       (not a leap year)
-     <% end %>
-   </p>
-   """
-  end
+  #    <%= if Date.leap_year?(Date.utc_today) do %>
+  #      (a leap year)
+  #    <% else %>
+  #      (not a leap year)
+  #    <% end %>
+  #  </p>
+  #  """
+  # end
 end
