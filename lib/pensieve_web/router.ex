@@ -2,12 +2,13 @@ defmodule PensieveWeb.Router do
   use PensieveWeb, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    # plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
     plug :put_root_layout, html: {PensieveWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    # plug :put_format, "json"
   end
 
   pipeline :api do
