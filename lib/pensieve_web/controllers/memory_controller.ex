@@ -5,8 +5,10 @@ defmodule PensieveWeb.MemoryController do
   alias Pensieve.Memories.Memory
 
   def index(conn, _params) do
+    # IO.inspect(get_format(conn))
     memories = Memories.list_memories
     render(conn, :index, memories: memories)
+    # render(conn, "index.json", memories: memories)
     # html(conn, "<i>hello</i>")
     # json(conn, %{data: for(memory <- memories, do: memory_data(memory))})
   end
