@@ -7,7 +7,17 @@ defmodule PensieveWeb.MemoryController do
   def index(conn, _params) do
     memories = Memories.list_memories
     render(conn, :index, memories: memories)
+    # html(conn, "<i>hello</i>")
+    # json(conn, %{data: for(memory <- memories, do: memory_data(memory))})
   end
+
+  # defp memory_data(%Memory{} = memory) do
+  #   %{
+  #     id: memory.id,
+  #     content: memory.content,
+  #     title: memory.title
+  #   }
+  # end
 
   def show(conn, %{"id" => id}) do
     memory = Memories.get_memory!(id)
